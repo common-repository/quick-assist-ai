@@ -1,0 +1,254 @@
+/* General popup styles */
+.wpco-popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;  /* 20px from the bottom */
+    right: 20px;   /* 20px from the right */
+    width: 350px;  /* Adjust as needed */
+    max-height: 80vh; /* Ensure it doesn't extend beyond the viewport height */
+    background-color: #eef1f4;
+    border: none; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1000; /* Ensure it stays on top */
+    font-family: Arial, sans-serif; /* Matching font family */
+    color: #000000;
+    overflow: hidden; /* Prevent content overflow */
+    flex-direction: column; /* Ensure children are stacked vertically */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Popup content styles */
+.wpco-popup-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Adjust padding for more space */
+    height: 100%; /* Adjust based on header/footer height */
+    overflow: hidden; /* Prevent content overflow */
+
+}
+
+/* Close button styles */
+.wpco-popup-close {
+    color: #aaa;
+    align-self: flex-end;
+    font-size: 24px; /* Adjust size */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wpco-popup-close:hover,
+.wpco-popup-close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Chat container styles */
+#wpco-chat-container {
+    display: flex;
+    flex-direction: column;
+    border: none; /* Remove border */
+    padding: 0;
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Chat output styles */
+#wpco-chat-output {
+    flex-grow: 1;
+    min-height: 0; /* Allow flex-grow to work correctly */
+    overflow-y: auto;
+    border-bottom: none; /* Remove border */
+    margin-bottom: 0;
+    word-wrap: break-word; /* Ensure content wraps properly */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-wrap: break-word; /* Break long words */
+
+}
+
+/* Chat bubble styles */
+.wpco-chat-bubble {
+    display: inline-block; /* Allow bubbles to wrap text content and adjust width */
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 97%; /* Set a maximum width */
+    width: auto; /* Allow width to adjust to content */
+    word-wrap: break-word; /* Ensure content wraps properly */
+    overflow-wrap: break-word; /* Break long words */
+    white-space: pre-wrap; /* Ensure that bubbles respect spaces and line breaks */
+    box-sizing: border-box; /* Include padding in width calculation */
+    white-space: pre-wrap; /* Ensure that bubbles respect spaces and line breaks */
+}
+
+.wpco-chat-bubble-container {
+    display: flex;
+    align-items: flex-start; /* Align image and bubble vertically at the top */
+    margin-bottom: 10px; /* Space between messages */
+    flex-wrap: nowrap; /* Prevent flex items from wrapping */
+}
+
+.wpco-chat-bubble-container.user {
+    justify-content: flex-end; /* Align user's bubble to the right */
+}
+
+.wpco-chat-bubble.user {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: right;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 75%;
+    box-sizing: border-box;
+    word-wrap: break-word; /* Ensure content wraps properly */
+    overflow-wrap: break-word; /* Ensure content wraps properly */
+    align-self: flex-end;
+    float: right;
+}
+
+.wpco-chat-bubble.assistant {
+    background-color: #ffffff; /*#555;*/
+    color: #000000;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: calc(100% - 40px); /* Adjust max width based on image size */
+    box-sizing: border-box;
+    word-wrap: break-word; /* Ensure content wraps properly */
+    overflow-wrap: break-word; /* Ensure content wraps properly */
+}
+
+.wpco-chat-bubble.starter {
+    background-color: #ffffff; /*#555;*/
+    color: #0363ea;
+    align-self: flex-start;
+    text-align: left;
+}
+
+/* Chat input container styles */
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
+    padding: 0px 0; /* Add padding to separate from chat output */
+    background-color: #ffffff; /* Match background color */
+}
+
+/* Chat input field styles */
+#wpco-chat-input {
+    flex: 1;
+    /*width: calc(100% - 80px);  Adjust width */
+    padding: 10px; /* Adjust padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 2px; /* Rounded corners */
+    margin-right: -38px; /* Adjust margin */
+    background-color: #ffffff; /* Dark background for input */
+    color: #000000; /* Light text color for input */
+
+    resize: vertical; /* Allow vertical resizing */
+    overflow-y: auto; /* Add vertical scrollbar when necessary */
+    min-height: 40px; /* Minimum height of the textarea */
+    max-height: 100px; /* Maximum height before scrolling */
+    line-height: 1.5; /* Line height for readability */
+
+
+}
+
+/* Send button styles */
+#wpco-chat-send {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#wpco-chat-send img {
+    width: 24px;
+    height: 24px;
+}
+
+#wpco-chat-send:disabled img {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Progress bar container */
+#progress-bar-container {
+    width: 100%;
+    background-color: #000000;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 30px;
+    background-color: #0352c1;
+}
+
+
+#wpco-chat-send:hover {
+    background-color: #005177;
+}
+
+/* Conversation starters */
+.wpco-starter-button {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 10px 20px;
+    /*background-color: #0298dd;*/
+    color: #045f89;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    text-align: left;
+}
+
+.wpco-chat-bubble.starter:hover {
+    background-color: #0352c1;
+    color: white;
+}
+
+/* Revert button styles */
+.wpco-revert-button {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+.wpco-revert-button:hover {
+    text-decoration: none;
+}
+
+/* User message alignment */
+.user-message {
+    text-align: right;
+}
+
+.disclaimer{
+    font-size: 12px;
+    text-align: left;
+}
+
+.assistant-img {
+    margin-right: 10px;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.wpco-chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    background-color: #008cba; /* Adjust background as needed */
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1001; /* Make sure it's above other content */
+    display: none;
+}
+
+.wpco-chat-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
